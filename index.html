@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Sales Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="dashboard">
+    <header class="header">
+      <h1>📊 Retail Sales Data Visualization Dashboard</h1>
+      <button id="exportBtn">Export CSV</button>
+    </header>
+
+    <!-- Filters -->
+    <section class="filters">
+      <select id="categoryFilter">
+        <option value="All">All Categories</option>
+      </select>
+
+      <select id="regionFilter">
+        <option value="All">All Regions</option>
+      </select>
+    </section>
+
+    <!-- KPI Cards -->
+    <section class="cards">
+      <div class="card">
+        <h3>Total Sales</h3>
+        <p id="totalSales">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Profit</h3>
+        <p id="totalProfit">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Orders</h3>
+        <p id="totalOrders">0</p>
+      </div>
+      <div class="card">
+        <h3>Average Order Value</h3>
+        <p id="avgOrder">0</p>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts">
+      <div class="chart-box">
+        <h2>Monthly Sales</h2>
+        <canvas id="salesChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h2>Category-wise Sales</h2>
+        <canvas id="categoryChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h2>Region-wise Sales</h2>
+        <canvas id="regionChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h2>Profit by Category</h2>
+        <canvas id="profitChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Report -->
+    <section class="report">
+      <h2>📌 Dashboard Report</h2>
+      <div id="reportContent"></div>
+    </section>
+
+    <!-- Table -->
+    <section class="table-section">
+      <h2>Data Preview</h2>
+      <div class="table-wrapper">
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>Order Date</th>
+              <th>Category</th>
+              <th>Region</th>
+              <th>Sales</th>
+              <th>Profit</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
